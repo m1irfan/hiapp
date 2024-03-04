@@ -24,8 +24,8 @@ public class UserController {
 	@PostMapping("/user")
 	public ResponseEntity<?> createUser(@RequestBody User user){
 		if(user!=null) {
-			userService.createUser(user);
-			return new ResponseEntity<String>("User Saved",HttpStatus.OK);
+			userService.createUser(user); // use with new object
+			return new ResponseEntity<String>("User Saved!",HttpStatus.OK);
 		}
 		return new ResponseEntity<String>("Invalid Data!",HttpStatus.BAD_REQUEST);
 	}
