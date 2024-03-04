@@ -25,6 +25,7 @@ public class UserController {
 	public ResponseEntity<?> createUser(@RequestBody User user){
 		if(user!=null) {
 			userService.createUser(user); // use with new object
+			System.out.println(user.getName());
 			return new ResponseEntity<String>("User Saved!",HttpStatus.OK);
 		}
 		return new ResponseEntity<String>("Invalid Data!",HttpStatus.BAD_REQUEST);
